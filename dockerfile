@@ -13,8 +13,8 @@ COPY ./bash /bin/bash
 RUN a2enmod cgid
 
 RUN mkdir /var/www/cgi-bin
-COPY ./code.sh /var/www/cgi-bin/
-RUN chmod 755 /var/www/cgi-bin/code.sh
+COPY ./test-cgi /var/www/cgi-bin/
+RUN chmod 755 /var/www/cgi-bin/test-cgi
 COPY ./serve-cgi-bin.conf /etc/apache2/conf-available/serve-cgi-bin.conf
 COPY ./000-default.conf /etc/apache2/site-available/000-default.conf
 COPY ./supervisord.conf /supervisord.conf
